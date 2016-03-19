@@ -1,0 +1,44 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div ng-include="'components/sideNav/sideNav.html'" ></div>
+
+<div class="page">
+<div class="container">
+  
+  
+   <tabset justified="false">
+    <tab heading="Flagged" class="clickable">
+    	<br>
+    	What are your dreams for the future?
+    	<ul class="" ng-repeat="dream in dreams">
+		<li ng-if="dream.flagged"><a class="btn btn-default" href="#" tooltip="{{dream.info}}" >
+			{{dream.future}} 
+			<a><button type="button" class="close" ng-click="deleteDream(dream)">&times;</button></a>
+			<a><button type="button" class="fa fa-flag-checkered" ng-click="unflag(dream)">Unflag</button></a>
+		</li>
+		</ul>
+		How can we make a better world?
+		<ul class="" ng-repeat="dream in dreams">
+		<li ng-if="dream.flagged"><a class="btn btn-default" href="#" tooltip="{{dream.info}}" >
+			{{dream.world}} 
+			<button type="button" class="close" ng-click="deleteDream(dream)">&times;</button></a>
+			<a><button type="button" class="fa fa-flag-checkered" ng-click="unflag(dream)">Unflag</button></a>
+		</li>
+		</ul>
+    </tab>
+    <tab heading="Manage Users" class="clickable">
+    	<br>
+    	<p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
+    	<ul class="list-group">
+		    <li class="list-group-item" ng-repeat="user in users">
+		        <strong>{{user.name}}</strong><br>
+		        <span class="text-muted">{{user.email}}</span>
+		        <a ng-click="delete(user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
+		    </li>
+		  </ul>
+    </tab>
+  </tabset>
+  
+
+  
+</div>
+</div>

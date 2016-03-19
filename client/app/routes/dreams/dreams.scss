@@ -1,0 +1,48 @@
+#map { 
+	height: 600px; 
+	width: 100%;
+}
+
+.page {
+	padding-top: 50px;
+}
+
+.dream-feed {
+	position: absolute;
+	top: 100px;
+	right: 50px;
+	width: 200px;
+	// height: 400px;
+	background: $gray-mid;
+	color: #4a4a4a;
+	padding: $base-padding;
+	padding-top: ($base-padding * 2);
+}
+
+.dream-toggle {
+	position: absolute;
+	background: $gray-mid;
+	color: #4a4a4a;
+	top: 50px;
+	right: 0px;
+	border-radius: 0;
+	border-color: #4a4a4a;
+	border:0px;
+	&:hover,
+	&:focus {
+		border-color: $navy;
+		background: $navy;
+		color: white;
+	}
+}
+
+.dream-close {
+	top: 0px;
+	background: transparent;
+	border:0px;
+}
+
+.dream-feed-list {
+	list-style-type: none;
+	padding-left: 0;
+}

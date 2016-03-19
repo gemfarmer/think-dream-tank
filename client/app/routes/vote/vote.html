@@ -1,0 +1,25 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div ng-include="'components/sideNav/sideNav.html'" ></div>
+
+<div class="page">
+	<section class="container">
+		<h3>What shared goals do you think we should work on?</h3>
+		<div class="goals-paired">
+			<div ng-if="!voted" ng-repeat="randomDream in randomDreams">
+
+				<div class="col-xs-6">
+					<!-- <p>What are your dreams for the future?<p> -->
+					<!-- <blockquote>{{randomDream.future}}</blockquote> -->
+					
+					<blockquote>{{randomDream.world}}</blockquote>
+					<button class="btn btn-primary" ng-click="voteThisDream(randomDream)">Vote for this goal</button>
+					<button class="btn btn-default" ng-click="flagDream(randomDream)">Flag for abuse</button>
+				</div>
+					
+				
+			</div>	
+		</div>
+		<button class="btn btn-primary col-xs-4 col-xs-offset-4" ng-click="newGoals()">Get new set of goals</button>
+		<div ng-if="voted">You voted!</div>
+	</section>
+</div>

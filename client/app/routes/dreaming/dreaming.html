@@ -1,0 +1,15 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="page">
+<form class="thing-form">
+    <label>Syncs in realtime across clients</label>
+
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="What are your dreams for the future?" ng-model="dreaming.future">
+      <input type="text" class="form-control" placeholder="How can we make a better world?" ng-model="dreaming.world">
+
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="addDreams()">Add New</button>
+      </span>
+    </p>
+  </form>
+  </div>

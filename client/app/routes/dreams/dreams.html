@@ -1,0 +1,38 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div ng-include="'components/sideNav/sideNav.html'" ></div>
+
+
+<div class="page">
+
+  <!-- <ul>
+    <li><a ng-click="selectParam('future')" class="clickable">What are your dreams for the future?</a></li>
+    <li><a ng-click="selectParam('world')" class="clickable">How can we make a better world?</a></li>
+  </ul>
+  <div ng-if="!voted" ng-repeat="dream in dreams">
+    <div class="col-xs-4 col-xs-offset-1 container" >
+      <blockquote>{{dream[searchParam]}}</blockquote>
+    </div>
+  </div> -->
+
+  <!-- <leaflet lf-center="center" height="480px" width="640px"></leaflet> -->
+  <!-- <leaflet markers="markers" center="osloCenter"></leaflet> -->
+  <button type="button" class="btn btn-primary padright" ng-click="markers.m1.icon=icon" ng-repeat="(key, icon) in icons">{{ key }}</button>
+  <!-- <leaflet center="eeuu" markers="markers" layers="layers" defaults="defaults" height="480px" width="640px"></leaflet> -->
+
+  <div class="map" id="map" height="480" width="640"></div>
+
+  <section ng-if="dreamFeedIsOpen" class="dream-feed">
+    <button class="btn btn-primary dream-toggle dream-close" ng-click="dreamFeed('close')"><i class="fa fa-times"></i></button>
+    <h4>Dream stream</h4>
+    <hr style="border-top:1px solid #4a4a4a;"/>
+    <div ng-repeat="dream in dreams">
+      
+      <ul class="dream-feed-list">
+        <li ng-click="showOnMap(dream)" ng-mouseenter="showOnMap(dream)" ng-mouseleave="resetMarkers()"><i class="fa fa-cloud"></i> {{dream.future}}</li>
+      </div>
+    </ul>
+  </section>
+  <button ng-if="!dreamFeedIsOpen" class="btn btn-primary dream-toggle" ng-click="dreamFeed('open')">Stream</button>
+</div>
+
+

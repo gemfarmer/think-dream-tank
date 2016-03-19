@@ -1,0 +1,33 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div ng-include="'components/sideNav/sideNav.html'" ></div>
+
+<div class="page">
+  <section class="container">
+    <!-- <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="dream in dreams">
+    <li><a href="#" tooltip="{{dream.info}}">{{dream.future}}, {{dream.world}}<button type="button" class="close" ng-click="deleteDream(dream)">&times;</button></a></li>
+    </ul> -->
+    <label>How many votes should we show?</label>
+    <select ng-model="votesShown">
+    	<option>5</option>
+    	<option>10</option>
+    	<option>20</option>
+    	<option>50</option>
+    	<option>100</option>
+    	<option val="dreams.length">All</option>
+    </select>
+    <table class="table table-striped">
+      <thead>
+      	<!--<th>Dreams for the Future</th>-->
+    	<th>Shared Goals for a Better World</th>
+    	<th class="clickable" ng-click="sortByVotes(parameter)">Votes</th>
+      </thead>
+      <tbody>
+      	<tr ng-repeat="dream in dreams | orderBy: parameter | limitTo : votesShown">
+      		<!--<td>{{dream.future}}</td>-->
+      		<td>{{dream.world}}</td>
+      		<td>{{dream.votes}}</td>
+      	</tr>
+      </tbody>
+    </table>
+  </section>
+</div>

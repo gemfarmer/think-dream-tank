@@ -1,0 +1,70 @@
+#side-nav {
+	width: 300px;
+	height:100%;
+	background: $navy;
+	left: -260px;
+	top: 0px;
+	z-index: 9000;
+	padding-left: $base-padding;
+	position: fixed;
+	overflow-y: auto;
+	&.open {
+		left: 0px;
+	}
+}
+
+.navbar-nav.icons{
+	float: right;
+	text-align: right;
+}
+#navbar-main {
+	position: relative;
+}
+
+.navbar-toggle {
+	position: relative;
+	top: 0;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	display: block;
+	margin: 6px;
+    padding: 3px;
+	.icon-bar {
+		color: white;
+		background: white;
+	}
+}
+
+.navbar-text {
+	color: white;
+	display: inline-block;
+	min-width: 150px;
+}
+
+.menuItem {
+	display: block;
+	a {
+		color: white;
+		text-transform: uppercase;
+		&:hover,
+		&:focus {
+			color: $navy;
+		}
+	}
+}
+
+.navbar-nav {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.navbar-nav > li {
+	float: none;
+}
+
+.header {
+	display: block;
+	color: white;
+	padding: $base-padding / 2 ;
+}
