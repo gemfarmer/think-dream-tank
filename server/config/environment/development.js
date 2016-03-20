@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/realizechange-dev'
+    uri: 'mongodb://localhost/thinkdreamtank-dev'
   },
 
   seedDB: false

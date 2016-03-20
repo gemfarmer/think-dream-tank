@@ -7,7 +7,7 @@
 
 module.exports = {
   DOMAIN:           'http://localhost:9000',
-  SESSION_SECRET:   'realizechange-secret',
+  SESSION_SECRET:   'thinkdreamtank-secret',
 
   FACEBOOK_ID:      'id',
   FACEBOOK_SECRET:  'secret',

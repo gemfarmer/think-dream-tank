@@ -5,6 +5,6 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/realizechange-test'
+    uri: 'mongodb://localhost/thinkdreamtank-test'
   }
 };

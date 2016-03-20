@@ -8,6 +8,7 @@ exports.setup = function (User, config) {
       callbackURL: config.facebook.callbackURL
     },
     function(accessToken, refreshToken, profile, done) {
+      
       User.findOne({
         'facebook.id': profile.id
       },
@@ -16,11 +17,12 @@ exports.setup = function (User, config) {
           return done(err);
         }
         if (!user) {
+
           user = new User({
             name: profile.displayName,
-            email: profile.emails[0].value,
+            email: profile.emails ? profile.emails[0].value : null,
             role: 'user',
-            username: profile.username,
+            username: profile.username ? profile.username : profile.id,
             provider: 'facebook',
             facebook: profile._json
           });
