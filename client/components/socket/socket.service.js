@@ -3,6 +3,7 @@
 
 angular.module('realizeChangeApp')
   .factory('socket', function(socketFactory) {
+    console.log(socketFactory);
 
     // socket.io now auto-configures its connection when we ommit a connection url
     var ioSocket = io('', {

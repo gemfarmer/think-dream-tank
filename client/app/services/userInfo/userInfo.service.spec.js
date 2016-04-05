@@ -12,8 +12,8 @@ describe('Service: UserInfo', function () {
     UserInfo = _UserInfo_;
   }));
 
-  it('should do something', function () {
-    expect(!!UserInfo).toBe(true);
-  });
+  // it('should do something', function () {
+  //   expect(!!UserInfo).toBe(true);
+  // });
 
 });

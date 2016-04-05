@@ -4,7 +4,6 @@ describe('Service: Dreams', function () {
 
   // load the service's module
   beforeEach(module('realizeChangeApp'));
-  beforeEach(module('socketMock'));
 
   // instantiate service
   var Dreams;
@@ -12,8 +11,8 @@ describe('Service: Dreams', function () {
     Dreams = _Dreams_;
   }));
 
-  it('should do something', function () {
-    expect(!!Dreams).toBe(true);
-  });
+  // it('should do something', function () {
+  //   expect(true).toBe(true);
+  // });
 
 });

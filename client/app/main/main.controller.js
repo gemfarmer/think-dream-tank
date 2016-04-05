@@ -7,26 +7,28 @@ angular.module('realizeChangeApp')
     $scope.currentUser = Auth.getCurrentUser();
     $scope.isLoggedIn = Auth.isLoggedIn();
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-      socket.syncUpdates('thing', $scope.awesomeThings);
-    });
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
+    // Example of using sockets
+    // $http.get('/api/things').success(function(awesomeThings) {
+    //   $scope.awesomeThings = awesomeThings;
+    //   socket.syncUpdates('thing', $scope.awesomeThings);
+    // });
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
+    // $scope.addThing = function() {
+    //   if($scope.newThing === '') {
+    //     return;
+    //   }
+    //   $http.post('/api/things', { name: $scope.newThing });
+    //   $scope.newThing = '';
+    // };
 
-    $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('thing');
-    });
+    // $scope.deleteThing = function(thing) {
+    //   $http.delete('/api/things/' + thing._id);
+    // };
+
+    // $scope.$on('$destroy', function () {
+    //   socket.unsyncUpdates('thing');
+    // });
 
     $scope.loginOauth = function(provider) {
       $window.location.href = '/auth/' + provider;

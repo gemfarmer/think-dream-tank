@@ -14,6 +14,7 @@
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
       <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+      <link rel="stylesheet" href="bower_components/mapbox.js/mapbox.css" />
       <!-- endbower -->
       <link href='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
     <!-- endbuild -->
@@ -57,14 +58,15 @@
       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
-      <script src="bower_components/angular-socket-io/socket.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
       <script src="bower_components/angular-google-analytics/dist/angular-google-analytics.min.js"></script>
       <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
       <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
+      <script src="bower_components/mapbox.js/mapbox.js"></script>
       <!-- endbower -->
+      
+      <script src="bower_components/angular-socket-io/socket.js"></script>
       <script src="socket.io-client/socket.io.js"></script>
-      <script src='//api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
       
     <!-- endbuild -->
 
@@ -79,7 +81,6 @@
           <script src="app/admin/admin.js"></script>
           <script src="app/admin/admin.module.js"></script>
           <script src="app/admin/admin.router.js"></script>
-          <script src="app/directives/backImage/backImage.directive.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
           <script src="app/routes/dreaming/dreaming.controller.js"></script>
