@@ -1,6 +1,6 @@
 .resources-image {
   position: absolute;
-    width: 300px;
+    width: 35%;
   	margin-top: $base-padding;
     margin-right: $base-padding;
     margin-left: $base-padding;
@@ -24,6 +24,23 @@
 }
 .affirmations {
     position: relative;
+}
+
+.text-padding {
+
+    margin-left: $base-padding; 
+}
+
+@media screen and (max-width: $screen-xs-min) {
+    #title {
+        margin-left: $base-padding;
+    }
+}
+
+@media screen and (max-width: $screen-sm-min) {
+    #title {
+        margin-left: $base-padding;
+    }
 }
 
 

@@ -79,15 +79,15 @@
 }
 
 .community-image {
-    width: 180px;
+    width: 38%;
     float: left;
-    margin-right: 20px;
+    margin-right: 5%;
     margin-left: $base-padding;
 }
 .world-image {
-    width: 140px;
+    width: 27%;
     float: right;
-    margin-right: 20px;
+    margin-right: $base-padding;
     margin-left: $base-padding;
     position: relative;
     top: 1px;
@@ -96,9 +96,21 @@
     width: 80%;
 }
 
-.texty {
+.text-padding {
     margin-right: $base-padding;
     margin-left: $base-padding; 
+}
+
+@media screen and (max-width: $screen-xs-min) {
+    #title2 {
+        margin-left: $base-padding;
+    }
+}
+
+@media screen and (max-width: $screen-sm-min) {
+    #title2 {
+        margin-left: $base-padding;
+    }
 }
 
 #slides_control > div{
@@ -115,4 +127,5 @@ img{
   top:20px;
  margin-left:-200px;
 }
- 
+
+
