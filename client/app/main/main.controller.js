@@ -39,11 +39,8 @@ angular.module('realizeChangeApp')
         return;
       }
       
-      console.log($scope.currentUser)
-
       if (!$scope.currentUser.location) {
         navigator.geolocation.getCurrentPosition(function(location){
-          console.log(currentUser);
           $scope.currentUser.location = {
             latitude: location.coords.latitude,
             longitude: location.coords.longitude
@@ -67,9 +64,6 @@ angular.module('realizeChangeApp')
         user_id: $scope.currentUser._id
         /* jshint ignore:end */
       };
-      
-      console.log('------');
-      console.log(newDream, $scope.currentUser);
       
       Dreams.add(newDream);
       $scope.dreaming = {};

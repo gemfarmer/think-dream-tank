@@ -6,10 +6,8 @@ angular.module('realizeChangeApp')
     if($cookieStore.get('token')) {
       currentUser = User.get();
 
-      console.log(currentUser)
       if (!currentUser.location) {
         navigator.geolocation.getCurrentPosition(function(location){
-          console.log(currentUser);
           currentUser.location = location.coords;
           User.update(currentUser);
         }, function(er) {
