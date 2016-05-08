@@ -79,6 +79,7 @@ angular.module('realizeChangeApp')
     $scope.markerList = [];
 
     $scope.addMarker = function(dream) {
+      console.log(dream)
       var coords = [+dream.location.latitude, +dream.location.longitude],
         options = {
           title: dream.future,

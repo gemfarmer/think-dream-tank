@@ -5,6 +5,17 @@ angular.module('realizeChangeApp')
     var currentUser = {};
     if($cookieStore.get('token')) {
       currentUser = User.get();
+
+      console.log(currentUser)
+      if (!currentUser.location) {
+        navigator.geolocation.getCurrentPosition(function(location){
+          console.log(currentUser);
+          currentUser.location = location.coords;
+          User.update(currentUser);
+        }, function(er) {
+          console.warn('user not updated properly', er);
+        });
+      }
     }
 
     return {
@@ -86,6 +97,25 @@ angular.module('realizeChangeApp')
           oldPassword: oldPassword,
           newPassword: newPassword
         }, function(user) {
+          return cb(user);
+        }, function(err) {
+          return cb(err);
+        }).$promise;
+      },
+
+
+      /**
+       * Update user
+       *
+       * @param  {String}   currentUser
+       * @param  {Function} callback    - optional
+       * @return {Promise}
+       */
+      update: function(currentUser, callback) {
+        var cb = callback || angular.noop;
+
+        return User.update({ id: currentUser._id }, currentUser, 
+          function(user) {
           return cb(user);
         }, function(err) {
           return cb(err);

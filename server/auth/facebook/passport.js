@@ -24,7 +24,12 @@ exports.setup = function (User, config) {
             role: 'user',
             username: profile.username ? profile.username : profile.id,
             provider: 'facebook',
-            facebook: profile._json
+            facebook: profile._json,
+            location: {
+              zip: 55419,
+              latitude: 90,
+              longitude: 90
+            }
           });
           user.save(function(err) {
             if (err) done(err);

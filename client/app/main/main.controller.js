@@ -39,11 +39,30 @@ angular.module('realizeChangeApp')
         return;
       }
       
+      console.log($scope.currentUser)
+
+      if (!$scope.currentUser.location) {
+        navigator.geolocation.getCurrentPosition(function(location){
+          console.log(currentUser);
+          $scope.currentUser.location = {
+            latitude: location.coords.latitude,
+            longitude: location.coords.longitude
+          }
+          User.update($scope.currentUser);
+        }, function(er) {
+          console.warn('user not updated properly', er);
+        });
+      }
+
+
       var newDream = { 
         future: $scope.dreaming.future, 
         world : $scope.dreaming.world,  
         votes: 0, 
-        location: $scope.currentUser.location,
+        location: {
+          latitude: $scope.currentUser.location.latitude,
+          longitude: $scope.currentUser.location.longitude
+        },
         /* jshint ignore:start */
         user_id: $scope.currentUser._id
         /* jshint ignore:end */

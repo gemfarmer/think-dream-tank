@@ -49,5 +49,7 @@ angular.module('realizeChangeApp')
 
     $scope.loginOauth = function(provider) {
       $window.location.href = '/auth/' + provider;
+
+      console.log(Auth.getCurrentUser())
     };
   });

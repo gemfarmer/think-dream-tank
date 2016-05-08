@@ -2,7 +2,8 @@
 
 angular.module('realizeChangeApp')
   .factory('User', function ($resource) {
-    return $resource('/api/users/:id/:controller', {
+
+  return $resource('/api/users/:id/:controller', {
       id: '@_id'
     },
     {
@@ -10,6 +11,12 @@ angular.module('realizeChangeApp')
         method: 'PUT',
         params: {
           controller:'password'
+        }
+      },
+      update: {
+        method: 'PUT',
+        params: {
+          controller:'update'
         }
       },
       get: {
