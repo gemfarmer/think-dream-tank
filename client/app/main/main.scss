@@ -79,18 +79,53 @@
 }
 
 .community-image {
-    width: 90%;
+    width: 38%;
     float: left;
-    margin-right: $base-padding;
+    margin-right: 5%;
     margin-left: $base-padding;
 }
-.brainstorm-image {
-    width: 90%;
-    float: left;
+.world-image {
+    width: 27%;
+    float: right;
     margin-right: $base-padding;
     margin-left: $base-padding;
+    position: relative;
+    top: 1px;
 }
 .modal {
     width: 80%;
 }
- 
+
+.text-padding {
+    margin-right: $base-padding;
+    margin-left: $base-padding; 
+}
+
+@media screen and (max-width: $screen-xs-min) {
+    #title2 {
+        margin-left: $base-padding;
+    }
+}
+
+@media screen and (max-width: $screen-sm-min) {
+    #title2 {
+        margin-left: $base-padding;
+    }
+}
+
+#slides_control > div{
+  height: 200px;
+}
+img{
+  margin:auto;
+  width: 400px;
+}
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+ margin-left:-200px;
+}
+
+
