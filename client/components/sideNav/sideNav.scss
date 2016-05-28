@@ -8,6 +8,10 @@
 	padding-left: $base-padding;
 	position: fixed;
 	overflow-y: auto;
+	-webkit-transition: right, 0.3s;
+    -moz-transition: right, 0.3s;
+    transition: right, 0.3s;
+	
 	&.open {
 		left: 0px;
 	}
