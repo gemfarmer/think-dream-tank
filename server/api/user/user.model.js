@@ -18,6 +18,7 @@ var UserSchema = new Schema({
     latitude: { type: Number },
     longitude: { type: Number }
   },
+  share: Boolean,
   hashedPassword: String,
   provider: String,
   salt: String,
