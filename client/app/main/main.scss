@@ -84,6 +84,7 @@
     margin-right: 5%;
     margin-left: $base-padding;
 }
+
 .world-image {
     width: 27%;
     float: right;
@@ -92,6 +93,7 @@
     position: relative;
     top: 1px;
 }
+
 .modal {
     width: 80%;
 }
@@ -112,20 +114,3 @@
         margin-left: $base-padding;
     }
 }
-
-#slides_control > div{
-  height: 200px;
-}
-img{
-  margin:auto;
-  width: 400px;
-}
-#slides_control {
-  position:absolute;
-  width: 400px;
-  left:50%;
-  top:20px;
- margin-left:-200px;
-}
-
-
