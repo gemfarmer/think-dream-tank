@@ -9,3 +9,4 @@ dist
 /server/config/local.sample.env.js
 /server/config/environment/index.js
 *.DS_Store
+npm-debug.log

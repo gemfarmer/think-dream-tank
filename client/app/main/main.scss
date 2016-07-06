@@ -64,7 +64,7 @@
         margin-bottom: $base-padding;
     }
 
-    p, 
+    p,
     .row {
         margin-left: $base-padding;
         margin-right: $base-padding;
@@ -81,7 +81,7 @@
 .community-image {
     width: 38%;
     float: left;
-    margin-right: 5%;
+    margin-right: $base-padding;
     margin-left: $base-padding;
 }
 
@@ -100,7 +100,7 @@
 
 .text-padding {
     margin-right: $base-padding;
-    margin-left: $base-padding; 
+    margin-left: $base-padding;
 }
 
 @media screen and (max-width: $screen-xs-min) {
