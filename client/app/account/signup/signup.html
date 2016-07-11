@@ -24,6 +24,7 @@
         <div class="form-group" ng-class="{ 'has-success': form.zip.$valid && submitted,
                                             'has-error': form.zip.$invalid && submitted }">
           <label>Zip Code</label>
+          <p> Your zipcode will be used to place your dream on a World Map.</p>
 
           <input type="text" name="zip" class="form-control" ng-model="user.zip"
                  required/>
@@ -71,10 +72,13 @@
         </div>
 
         <div>
-          <label> You are invited to participate in the Think Dream Tank. This project examines how people form and develop their dreams and goals for the future.  This project is completely voluntary and you can stop at anytime. All data will be anonymously shared for educational and research purposes unless otherwise specified. Please visit our About Us page for more information. </label>
-          <!--add check boxes 
-          [ ] Yes I would like to participate and share my information with others.
-          [ ] Please do not share my infomation. I would still like to participate.-->
+          <label> You are invited to participate in the Think Dream Tank. This project examines how people develop their dreams and goals for the future. This project is completely voluntary and you can stop at anytime. All data will be anonymously shared for educational and research purposes unless otherwise specified. Please visit our <a href="https://thinkdreamtankblog.wordpress.com/" target="_blank" id="aboutuslink">About Us</a> page for more information. </label>
+          <!--add check boxes -still need to write to database-->
+        <form id="consent">
+          <input type="radio" name="consent_share" value="yes" checked /> Yes I would like to participate and share with others.<br />
+          <!--need to add this and then set up data to not be shared)
+          <input type="radio" name="consent_private" value="nonshare" />Please do not share my infomation, however, I would still like to participate.--><br />
+</form>
         </div>
 
         <div>

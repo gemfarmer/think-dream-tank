@@ -1,0 +1,25 @@
+.resources {
+    top: 80px;
+    left: 355px;
+}
+
+.text-padding {
+    margin-left: $base-padding; 
+}
+
+@media screen and (max-width: $screen-xs-min) {
+    #title {
+        margin-left: $base-padding;
+    }
+}
+
+@media screen and (max-width: $screen-sm-min) {
+    #title {
+        margin-left: $base-padding;
+    }
+}
+
+
+
+
+

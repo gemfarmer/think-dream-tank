@@ -64,7 +64,7 @@
         margin-bottom: $base-padding;
     }
 
-    p, 
+    p,
     .row {
         margin-left: $base-padding;
         margin-right: $base-padding;
@@ -79,18 +79,39 @@
 }
 
 .community-image {
-    width: 90%;
+    width: 38%;
     float: left;
     margin-right: $base-padding;
     margin-left: $base-padding;
 }
-.brainstorm-image {
-    width: 90%;
-    float: left;
+
+.world-image {
+    width: 27%;
+    float: right;
     margin-right: $base-padding;
     margin-left: $base-padding;
+    position: relative;
+    top: 1px;
 }
+
 .modal {
     width: 80%;
 }
- 
+
+.text-padding {
+    float: left;
+    margin-left: $base-padding;
+    margin-right: $base-padding;
+}
+
+@media screen and (max-width: $screen-xs-min) {
+    #title2 {
+        margin-left: $base-padding;
+    }
+}
+
+@media screen and (max-width: $screen-sm-min) {
+    #title2 {
+        margin-left: $base-padding;
+    }
+}
