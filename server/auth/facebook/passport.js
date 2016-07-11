@@ -2,7 +2,9 @@ var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 
 exports.setup = function (User, config) {
-  passport.use(new FacebookStrategy({
+  console.log('---------------', config)
+  passport.use(new FacebookStrategy(
+    {
       clientID: config.facebook.clientID,
       clientSecret: config.facebook.clientSecret,
       callbackURL: config.facebook.callbackURL
@@ -29,7 +31,8 @@ exports.setup = function (User, config) {
               zip: 55419,
               latitude: 90,
               longitude: 90
-            }
+            },
+            share: true
           });
           user.save(function(err) {
             if (err) done(err);
