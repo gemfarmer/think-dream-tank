@@ -99,8 +99,9 @@
 }
 
 .text-padding {
-    margin-right: $base-padding;
+    float: left;
     margin-left: $base-padding;
+    margin-right: $base-padding;
 }
 
 @media screen and (max-width: $screen-xs-min) {
