@@ -11,7 +11,6 @@ angular.module('realizeChangeApp')
       $scope.submitted = true;
 
       if(form.$valid) {
-        console.log($scope.user)
         var createUser = function(location) {
           Auth.createUser({
             name: $scope.user.name,
