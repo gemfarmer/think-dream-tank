@@ -22,8 +22,4 @@ angular.module('realizeChangeApp')
         });
       }
     };
-
-    $scope.loginOauth = function(provider) {
-      $window.location.href = '/auth/' + provider;
-    };
   });

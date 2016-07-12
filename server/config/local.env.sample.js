@@ -9,15 +9,6 @@ module.exports = {
   DOMAIN:           'http://localhost:9000',
   SESSION_SECRET:   'thinkdreamtank-secret',
 
-  FACEBOOK_ID:      'id',
-  FACEBOOK_SECRET:  'secret',
-
-  TWITTER_ID:       'app-id',
-  TWITTER_SECRET:   'secret',
-
-  GOOGLE_ID:        'id',
-  GOOGLE_SECRET:    'secret',
-
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''
 };

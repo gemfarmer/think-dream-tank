@@ -30,15 +30,11 @@ angular.module('realizeChangeApp')
     //   socket.unsyncUpdates('thing');
     // });
 
-    $scope.loginOauth = function(provider) {
-      $window.location.href = '/auth/' + provider;
-    };
-
     $scope.addDreams = function() {
       if($scope.dreaming === {}) {
         return;
       }
-      
+
       if (!$scope.currentUser.location) {
         navigator.geolocation.getCurrentPosition(function(location){
           $scope.currentUser.location = {
@@ -52,10 +48,10 @@ angular.module('realizeChangeApp')
       }
 
 
-      var newDream = { 
-        future: $scope.dreaming.future, 
-        world : $scope.dreaming.world,  
-        votes: 0, 
+      var newDream = {
+        future: $scope.dreaming.future,
+        world : $scope.dreaming.world,
+        votes: 0,
         location: {
           latitude: $scope.currentUser.location.latitude,
           longitude: $scope.currentUser.location.longitude
@@ -64,7 +60,7 @@ angular.module('realizeChangeApp')
         user_id: $scope.currentUser._id
         /* jshint ignore:end */
       };
-      
+
       Dreams.add(newDream);
       $scope.dreaming = {};
       $scope.formSubmitted = true;
@@ -77,8 +73,6 @@ angular.module('realizeChangeApp')
       });
   };
 
-  }]).controller('warmupModalCtrl', [ function () { 
-    
-  }]);
+  }]).controller('warmupModalCtrl', [ function () {
 
-  
+  }]);

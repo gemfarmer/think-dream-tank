@@ -6,13 +6,9 @@
     <span class="icon-bar"></span>
   </button>
   <h4 ng-show="isLoggedIn()">
-    <img ng-if="userInfo && $root.isCollapsed" id="profile-picture" src="{{userInfo.profileImage}}"/>
-    <!-- <img id="profile-picture" src="https://graph.facebook/{{currentUser.facebook.id}}/picture"/> -->
-    <!-- <img id="profile-picture" ng-src="{{currentUser.profilePicture}}"/> -->
-
     <p ng-if="userInfo && $root.isCollapsed" class="navbar-text">
       Hello, {{ userInfo.firstName }}
-    </p> 
+    </p>
   </h4>
   <h4 ng-show="!isLoggedIn()" class="header">
     Think Dream Tank
@@ -28,7 +24,6 @@
       <li class="menuItem" ng-show="isAdmin() && isLoggedIn()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
       <li class="menuItem" ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
       <li class="menuItem" ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
-      <li class="menuItem" ng-hide="isLoggedIn()"><a href="javascript:void(0)" ng-click="loginOauth('facebook')">Login with Facebook</a></li>
       <li class="menuItem" ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings">Settings</a></li>
       <li class="menuItem" ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a></li>
     </ul>
@@ -43,8 +38,6 @@
       <li class="menuItem" ng-show="isAdmin() && isLoggedIn()" ng-class="{active: isActive('/admin')}"><a href="/admin"><i class="fa fa-users"></i></a></li>
       <li class="menuItem" ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup"><i class="fa fa-plus"></i></a></li>
       <li class="menuItem" ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login"><i class="fa fa-sign-in"></i></a></li>
-      <li class="menuItem" ng-hide="isLoggedIn()"><a href="javascript:void(0)" ng-click="loginOauth('facebook')"><i class="fa fa-facebook"></i>
-      </a></li>
       <li class="menuItem" ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><i class="fa fa-cogs"></i></a></li>
       <li class="menuItem" ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()"><i class="fa fa-sign-out"></i></a></li>
     </ul>

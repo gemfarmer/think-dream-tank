@@ -4,11 +4,7 @@ angular.module('realizeChangeApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth, User, UserInfo, $modal,$rootScope) {
     $scope.currentUser = Auth.getCurrentUser();
 
-    $scope.userInfo = UserInfo;
-        // console.log('UserInfo', UserInfo)
-    $scope.currentUser.profilePicture = $scope.currentUser.facebook ? 'http://graph.facebook/'+$scope.currentUser.facebook.id+'/picture' 
-                                                                    : '';
-    
+    $scope.userInfo = UserInfo;                                        
     $scope.menu = [{
       'title': 'Dreams',
       'link': '/dreams',
