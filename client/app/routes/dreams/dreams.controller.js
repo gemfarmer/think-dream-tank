@@ -93,6 +93,7 @@ angular.module('realizeChangeApp')
         .setOpacity(markerOpacity);
 
       marker.id = dream._id;
+
       $scope.markerList.push(marker);
         
       // marker.on('click', function(e) {

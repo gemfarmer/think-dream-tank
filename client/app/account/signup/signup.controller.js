@@ -5,11 +5,12 @@ angular.module('realizeChangeApp')
     $scope.user = {};
     $scope.errors = {};
 
+    $scope.user.share = true;
+
     $scope.register = function(form) {
       $scope.submitted = true;
 
       if(form.$valid) {
-
         var createUser = function(location) {
           Auth.createUser({
             name: $scope.user.name,
@@ -19,7 +20,8 @@ angular.module('realizeChangeApp')
               latitude: location ? +location.coords.latitude : null,
               longitude: location ? +location.coords.longitude : null,
               zip: +$scope.user.zip
-            }
+            },
+            share: $scope.user.share
           })
           .then( function() {
             // Account created, redirect to home
@@ -45,11 +47,5 @@ angular.module('realizeChangeApp')
           createUser();
         });
       }
-    };
-
-    $scope.loginOauth = function(provider) {
-      $window.location.href = '/auth/' + provider;
-
-      console.log(Auth.getCurrentUser())
     };
   });

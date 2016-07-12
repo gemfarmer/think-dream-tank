@@ -5,7 +5,7 @@ var passport = require('passport');
 var auth = require('../auth.service');
 
 var router = express.Router();
-console.log(router)
+
 router
   .get('/', passport.authenticate('facebook', {
     scope: ['email', 'user_about_me'],

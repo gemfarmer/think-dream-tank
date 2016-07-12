@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
-var authTypes = ['github', 'twitter', 'facebook', 'google'];
+var authTypes = ['local'];
 
 var UserSchema = new Schema({
   name: String,
@@ -18,13 +18,10 @@ var UserSchema = new Schema({
     latitude: { type: Number },
     longitude: { type: Number }
   },
+  share: Boolean,
   hashedPassword: String,
   provider: String,
   salt: String,
-  facebook: {},
-  twitter: {},
-  google: {},
-  github: {}
 });
 
 /**

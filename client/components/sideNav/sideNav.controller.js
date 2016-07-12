@@ -5,10 +5,7 @@ angular.module('realizeChangeApp')
     $scope.currentUser = Auth.getCurrentUser();
     $scope.sideNavOpen = false;
 
-    $scope.userInfo = UserInfo;
-        // console.log('UserInfo', UserInfo)
-    $scope.currentUser.profilePicture = $scope.currentUser.facebook ? 'http://graph.facebook/'+$scope.currentUser.facebook.id+'/picture' 
-                                                                    : '';
+    $scope.userInfo = UserInfo;                                                              
     $scope.menu = [{
       'title': 'Dreams',
       'link': '/dreams',
