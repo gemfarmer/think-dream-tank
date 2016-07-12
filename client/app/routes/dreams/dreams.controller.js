@@ -42,8 +42,6 @@ angular.module('realizeChangeApp')
 
     $scope.markerSettings = {
       default: {
-        // 'iconUrl': 'assets/images/Star7.png',
-        // 'iconUrl': 'assets/images/star5.png', // good contrast against white
         'iconUrl': 'assets/images/Star8.png',
         'iconSize': [30, 30],
         'iconAnchor': [15, 15],
