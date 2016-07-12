@@ -5,7 +5,8 @@ angular.module('realizeChangeApp')
     $scope.currentUser = Auth.getCurrentUser();
     $scope.sideNavOpen = false;
 
-    $scope.userInfo = UserInfo;                                                              
+    $scope.userInfo = UserInfo;  
+                                                                
     $scope.menu = [{
       'title': 'Dreams',
       'link': '/dreams',
