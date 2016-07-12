@@ -253,7 +253,8 @@ module.exports = function (grunt) {
       html: ['<%= yeoman.dist %>/public/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/public/{,*/}*.css'],
       js: ['<%= yeoman.dist %>/public/{,*/}*.js', 
-           '!<%= yeoman.dist %>/public/bower_components/mapbox.js'],
+           '!<%= yeoman.dist %>/public/bower_components/mapbox.js', 
+           '<%= yeoman.dist %>/public/bower_components/mapbox.js/mapbox.js'],
       options: {
         assetsDirs: [
           '<%= yeoman.dist %>/public',
