@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('LoginCtrl', function ($scope, Auth, $location, $window) {
+  .controller('LoginCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};
 

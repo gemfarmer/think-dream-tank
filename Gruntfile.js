@@ -75,7 +75,7 @@ module.exports = function (grunt) {
           '<%= yeoman.client %>/{app,components}/**/*.spec.js',
           '<%= yeoman.client %>/{app,components}/**/*.mock.js'
         ],
-        tasks: ['newer:jshint:all', 'karma']
+        tasks: ['newer:jshint:all']
       },
       injectSass: {
         files: [
@@ -252,7 +252,9 @@ module.exports = function (grunt) {
     usemin: {
       html: ['<%= yeoman.dist %>/public/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/public/{,*/}*.css'],
-      js: ['<%= yeoman.dist %>/public/{,*/}*.js'],
+      js: ['<%= yeoman.dist %>/public/{,*/}*.js', 
+           '!<%= yeoman.dist %>/public/bower_components/mapbox.js', 
+           '<%= yeoman.dist %>/public/bower_components/mapbox.js/mapbox.js'],
       options: {
         assetsDirs: [
           '<%= yeoman.dist %>/public',
@@ -603,8 +605,7 @@ module.exports = function (grunt) {
         'injector:sass', 
         'concurrent:test',
         'injector',
-        'autoprefixer',
-        'karma'
+        'autoprefixer'
       ]);
     }
 

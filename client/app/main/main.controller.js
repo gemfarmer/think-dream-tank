@@ -40,7 +40,8 @@ angular.module('realizeChangeApp')
           $scope.currentUser.location = {
             latitude: location.coords.latitude,
             longitude: location.coords.longitude
-          }
+          };
+          
           User.update($scope.currentUser);
         }, function(er) {
           console.warn('user not updated properly', er);
