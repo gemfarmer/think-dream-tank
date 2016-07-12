@@ -7,6 +7,8 @@ angular.module('realizeChangeApp')
 
     $scope.user.share = true;
 
+    $scope.libby = true;
+
     $scope.register = function(form) {
       $scope.submitted = true;
 
