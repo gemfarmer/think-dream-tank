@@ -5,10 +5,6 @@ angular.module('realizeChangeApp')
     $scope.user = {};
     $scope.errors = {};
 
-    $scope.user.share = true;
-
-    $scope.libby = true;
-
     $scope.register = function(form) {
       $scope.submitted = true;
 
@@ -50,4 +46,5 @@ angular.module('realizeChangeApp')
         });
       }
     };
+
   });

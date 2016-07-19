@@ -2,17 +2,20 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('DreamsCtrl', [ '$scope', '$http', 'socket', 'Dreams', 'User', '$window', function ($scope, $http, socket, Dreams, User, $window) {
+  .controller('DreamsCtrl', [ '$scope', '$http', 'socket', 'Dreams', 'User', '$window', 'utility', function ($scope, $http, socket, Dreams, User, $window, utility) {
+    var currentUser = User.get();
 
     $scope.searchParam = 'world';
     $scope.dreamFeedIsOpen = true;
 
     $http.get('/api/dreams').success(function(dreams) {
-      $scope.dreams = dreams;
+
+      $scope.dreams = utility.filter(dreams);
       socket.syncUpdates('dream', $scope.dreams);
 
-      dreams.forEach(function(dream){
-        $scope.addMarker(dream);  
+      $scope.dreams.forEach(function(dream){
+        // console.log(dream, User);
+        $scope.addMarker(dream);
       });
     });
 
@@ -37,7 +40,7 @@ angular.module('realizeChangeApp')
         $scope.dreamFeedIsOpen = true;
       } else {
         $scope.dreamFeedIsOpen = false;
-      }    
+      }
     };
 
     $scope.markerSettings = {
@@ -95,7 +98,7 @@ angular.module('realizeChangeApp')
       marker.id = dream._id;
 
       $scope.markerList.push(marker);
-        
+
       // marker.on('click', function(e) {
       //   // e.target.openPopup();
       // });
@@ -108,7 +111,7 @@ angular.module('realizeChangeApp')
       // console.log(dream);
       $scope.updateMarker(dream);
     };
-  
+
     // Provide your access token
     L.mapbox.accessToken = 'pk.eyJ1IjoiZ2VtZmFybWVyIiwiYSI6ImtNWkpLbHcifQ.jWx398eYRGPYROgOcxXjdQ';
 
@@ -128,5 +131,3 @@ angular.module('realizeChangeApp')
 
   }]);
 /* jshint ignore:end */
-
-

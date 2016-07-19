@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('ResultsCtrl', function ($scope, $http, socket) {
+  .controller('ResultsCtrl', ['$scope', '$http', 'socket', 'utility', function ($scope, $http, socket, utility) {
     $scope.parameter = '-votes';
     $scope.votesShown = 10;
     $http.get('/api/dreams').success(function(dreams) {
-      $scope.dreams = dreams;
+      $scope.dreams = utility.filter(dreams);
       socket.syncUpdates('dream', $scope.dreams);
     });
 
@@ -23,10 +23,10 @@ angular.module('realizeChangeApp')
     	} else {
     		$scope.parameter = 'votes';
     	}
-    	
+
     };
     $scope.showVotes = function(votes){
     	$scope.votesShown = votes;
     };
 
-  });
+  }]);
