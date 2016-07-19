@@ -4,15 +4,10 @@ angular.module('realizeChangeApp')
   .controller('SignupCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};
-    // $scope.shareChoice = function(user){
-    //   // $scope.postedUser=user;
-    // }
-
-    $scope.libby = true;
 
     $scope.register = function(form) {
       $scope.submitted = true;
-      console.log($scope.user);
+
       if(form.$valid) {
         var createUser = function(location) {
           Auth.createUser({

@@ -14,7 +14,7 @@ angular.module('realizeChangeApp')
       socket.syncUpdates('dream', $scope.dreams);
 
       $scope.dreams.forEach(function(dream){
-        console.log(dream, User);
+        // console.log(dream, User);
         $scope.addMarker(dream);
       });
     });
