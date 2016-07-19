@@ -6,7 +6,7 @@ angular.module('realizeChangeApp')
     $scope.dreaming = {};
     $scope.currentUser = Auth.getCurrentUser();
     $scope.isLoggedIn = Auth.isLoggedIn();
-
+  
 
     // Example of using sockets
     // $http.get('/api/things').success(function(awesomeThings) {
@@ -47,7 +47,7 @@ angular.module('realizeChangeApp')
           console.warn('user not updated properly', er);
         });
       }
-
+      var share = !!$scope.currentUser.share
 
       var newDream = {
         future: $scope.dreaming.future,
@@ -58,7 +58,8 @@ angular.module('realizeChangeApp')
           longitude: $scope.currentUser.location.longitude
         },
         /* jshint ignore:start */
-        user_id: $scope.currentUser._id
+        user_id: $scope.currentUser._id,
+        share: share
         /* jshint ignore:end */
       };
 

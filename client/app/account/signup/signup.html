@@ -7,7 +7,7 @@
     <div class="col-sm-12">
       <h1>Sign up</h1>
     </div>
-    <div class="col-sm-12">
+    <div class="col-sm-12" form ng-init="user={};user.share=true">
       <form class="form" name="form" ng-submit="register(form)" novalidate>
 
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
@@ -71,27 +71,28 @@
           </p>
         </div>
 
-        <div class="form-group">
-          <p> You are invited to participate in the Think Dream Tank. This project examines how people form and develop their dreams and goals for the future. This project is completely voluntary and you can stop at anytime. All data will be anonymously shared for educational and research purposes unless otherwise specified. Please visit our <a href="https://thinkdreamtankblog.wordpress.com/" target="_blank" id="aboutuslink">About Us</a> page for more information.</p>
-
+        <p> You are invited to participate in the Think Dream Tank. This project examines how people form and develop their dreams and goals for the future. This project is completely voluntary and you can stop at anytime. All data will be anonymously shared for educational and research purposes unless otherwise specified. Please visit our <a href="https://thinkdreamtankblog.wordpress.com/" target="_blank" id="aboutuslink">About Us</a> page for more information.</p>
+        <div class ="form-group" ng-init="user={};user.share=true">
           <input type="checkbox"
-                 ng-model="user.share"
-                 name="consent_share"
-                 checked="checked" /> <label>Yes, I would like to participate and share with others.</label>
-        </div>
-
-        <div>
-          <button class="btn btn-inverse btn-lg btn-login" type="submit">
-            Sign up
-          </button>
-          or
-          <a class="btn btn-default btn-lg btn-register" href="/login">
+                ng-model="user.share"
+                 /><label>Yes, I would like to participate and share with others.</label>
+              <div ng-hide = "user.share">
+                   <input type="checkbox"/>
+                   <label>No, I do not want to share with others.</label>
+              </div>
+        <button class="btn btn-default btn-lg btn-login"
+         type="submit">Sign Up</button>
+            <!-- <p>User: {{ user }}</p>
+            <p>Share? {{ user.share }}.</p> -->
+          or <a class="btn btn-default btn-lg btn-register" href="/login">
             Login
           </a>
         </div>
       </form>
+      </form>
     </div>
   </div>
-  <hr>
+  </div>
 </div>
 </div>
+<hr>

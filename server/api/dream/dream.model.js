@@ -10,6 +10,7 @@ var DreamSchema = new Schema({
   votes: Number,
   flagged: Boolean,
   user_id: String,
+  share: Boolean,
   location: {
     zip: { type: Number },
     latitude: { type: Number },
