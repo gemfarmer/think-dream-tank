@@ -46,7 +46,7 @@ angular.module('realizeChangeApp', [
         // Enable enhanced link attribution
         AnalyticsProvider.useEnhancedLinkAttribution(true);
 
- 
+
         // Set custom cookie parameters for analytics.js
         AnalyticsProvider.setCookieConfig({
           cookieDomain: 'https://frozen-basin-2150.herokuapp.com',
@@ -66,7 +66,7 @@ angular.module('realizeChangeApp', [
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
-    // $AnalyticsProvider.firstPageview(true);  Records pages that don't use $state or $route 
+    // $AnalyticsProvider.firstPageview(true);  Records pages that don't use $state or $route
     // $AnalyticsProvider.withAutoBase(true);  /* Records full path */
   })
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
@@ -104,7 +104,7 @@ angular.module('realizeChangeApp', [
       $rootScope.isCollapsed = false;
       Auth.isLoggedInAsync(function(loggedIn) {
         // console.log('loggedIn',loggedIn);
-        
+
         if (next.authenticate && !loggedIn) {
           $location.path('/login');
         }
