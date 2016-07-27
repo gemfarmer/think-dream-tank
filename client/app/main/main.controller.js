@@ -7,7 +7,6 @@ angular.module('realizeChangeApp')
     $scope.currentUser = Auth.getCurrentUser();
     $scope.isLoggedIn = Auth.isLoggedIn();
   
-
     // Example of using sockets
     // $http.get('/api/things').success(function(awesomeThings) {
     //   $scope.awesomeThings = awesomeThings;
@@ -41,7 +40,7 @@ angular.module('realizeChangeApp')
             latitude: location.coords.latitude,
             longitude: location.coords.longitude
           };
-          
+
           User.update($scope.currentUser);
         }, function(er) {
           console.warn('user not updated properly', er);

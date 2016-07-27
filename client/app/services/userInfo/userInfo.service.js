@@ -7,6 +7,7 @@ angular.module('realizeChangeApp')
 
     var UserInfo = function(){
 	    this.name = currentUser.name;
+      this.share = currentUser.share;
     };
     return new UserInfo();
   });
