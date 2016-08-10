@@ -8,7 +8,7 @@ var authTypes = ['local'];
 var UserSchema = new Schema({
   name: String,
   email: { type: String, lowercase: true },
-  dream_id: [ String ],
+  dream_id: [ String] ,
   role: {
     type: String,
     default: 'user'

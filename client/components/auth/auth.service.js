@@ -112,7 +112,7 @@ angular.module('realizeChangeApp')
       update: function(currentUser, callback) {
         var cb = callback || angular.noop;
 
-        return User.update({ id: currentUser._id }, currentUser, 
+        return User.update({ id: currentUser._id }, currentUser,
           function(user) {
           return cb(user);
         }, function(err) {

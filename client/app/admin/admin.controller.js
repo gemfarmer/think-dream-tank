@@ -24,7 +24,6 @@ angular.module('realizeChangeApp')
       socket.unsyncUpdates('dreams');
     });
 
-
     $scope.delete = function(user) {
       User.remove({ id: user._id });
       angular.forEach($scope.users, function(u, i) {

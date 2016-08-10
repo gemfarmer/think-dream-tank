@@ -5,7 +5,7 @@ angular.module('realizeChangeApp')
     $scope.errors = {};
     $scope.user = {};
     $scope.userInfo = UserInfo;
-
+  
     var currentUser = User.get();
 
     $scope.updateChange = function(shareStatus){

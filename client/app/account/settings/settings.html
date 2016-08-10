@@ -5,7 +5,9 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
+
       <h1>Change Password</h1>
+
     </div>
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="changePassword(form)" novalidate>
@@ -45,14 +47,18 @@
 <div class="page">
 <div class="container">
   <div class="row">
+      <p> {{userInfo.name}}</p>
     <div class="col-sm-12">
       <h1>Change Share Status? </h1>
+
     </div>
     <div class="col-sm-12">
+
       <form class="form" name="form" ng-submit="updateChange(userInfo.share)" novalidate>
         <label><p>Hey, {{ userInfo.name }}. </p> Your current ability to share your dreams with others is:</label>
          <div ng-model="userInfo.share">
            <p>{{userInfo.share}}</p>
+
           <label>Change Dream Sharing Status to {{!userInfo.share}}?</label>
           <input type="checkbox" ng-model="userInfo.share"/>
           <br>
