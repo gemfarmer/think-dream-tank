@@ -17,14 +17,15 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 .clickable {
 	cursor: pointer;
 }
-#profile-picture{
+#profile-picture {
+    width: 40px;
 	border-radius: 50%;
 }
 
 .not-landing {
 	.navbar-default{
     background-color: transparent;
-    
+
     .navbar-nav .active a{
     	background-color: white;
     }
@@ -54,6 +55,5 @@ body {
 @import 'footer/footer.scss';
 @import 'modal/modal.scss';
 @import 'navbar/navbar.scss';
-@import 'oauth-buttons/oauth-buttons.scss';
 @import 'sideNav/sideNav.scss';
 // endinjector

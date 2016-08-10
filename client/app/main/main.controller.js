@@ -1,12 +1,11 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('MainCtrl', [ '$scope', '$http', 'socket', '$window', 'Auth', 'Dreams', 'User', '$modal', function ($scope, $http, socket, $window, Auth, Dreams, User, $modal) {
+  .controller('MainCtrl', [ '$scope', '$http', 'socket', '$window', 'Auth', 'User', '$modal', function ($scope, $http, socket, $window, Auth, User, $modal) {
     // $scope.awesomeThings = [];
     $scope.dreaming = {};
     $scope.currentUser = Auth.getCurrentUser();
     $scope.isLoggedIn = Auth.isLoggedIn();
-
 
     // Example of using sockets
     // $http.get('/api/things').success(function(awesomeThings) {
@@ -30,41 +29,39 @@ angular.module('realizeChangeApp')
     //   socket.unsyncUpdates('thing');
     // });
 
-    $scope.loginOauth = function(provider) {
-      $window.location.href = '/auth/' + provider;
-    };
-
     $scope.addDreams = function() {
       if($scope.dreaming === {}) {
         return;
       }
-      
+
       if (!$scope.currentUser.location) {
         navigator.geolocation.getCurrentPosition(function(location){
           $scope.currentUser.location = {
             latitude: location.coords.latitude,
             longitude: location.coords.longitude
-          }
+          };
+
           User.update($scope.currentUser);
         }, function(er) {
           console.warn('user not updated properly', er);
         });
       }
+      var share = !!$scope.currentUser.share
 
-
-      var newDream = { 
-        future: $scope.dreaming.future, 
-        world : $scope.dreaming.world,  
-        votes: 0, 
+      var newDream = {
+        future: $scope.dreaming.future,
+        world : $scope.dreaming.world,
+        votes: 0,
         location: {
           latitude: $scope.currentUser.location.latitude,
           longitude: $scope.currentUser.location.longitude
         },
         /* jshint ignore:start */
-        user_id: $scope.currentUser._id
+        user_id: $scope.currentUser._id,
+        share: share
         /* jshint ignore:end */
       };
-      
+
       Dreams.add(newDream);
       $scope.dreaming = {};
       $scope.formSubmitted = true;
@@ -77,7 +74,6 @@ angular.module('realizeChangeApp')
       });
   };
 
-  }]).controller('warmupModalCtrl', [ function () { 
-    
+  }]).controller('warmupModalCtrl', [ function () {
+
   }]);
-  

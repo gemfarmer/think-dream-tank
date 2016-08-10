@@ -7,7 +7,7 @@
     <div class="col-sm-12">
       <h1>Sign up</h1>
     </div>
-    <div class="col-sm-12">
+    <div class="col-sm-12" form ng-init="user={};user.share=true">
       <form class="form" name="form" ng-submit="register(form)" novalidate>
 
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
@@ -24,6 +24,7 @@
         <div class="form-group" ng-class="{ 'has-success': form.zip.$valid && submitted,
                                             'has-error': form.zip.$invalid && submitted }">
           <label>Zip Code</label>
+          <p> Your zipcode will be used to place your dream on a World Map.</p>
 
           <input type="text" name="zip" class="form-control" ng-model="user.zip"
                  required/>
@@ -34,7 +35,7 @@
             What's your zip address?
           </p>
         </div>
-        
+
         <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
                                             'has-error': form.email.$invalid && submitted }">
           <label>Email</label>
@@ -70,32 +71,26 @@
           </p>
         </div>
 
-        <div>
-          <label> You are invited to participate in the Think Dream Tank. This project examines how people form and develop their dreams and goals for the future.  This project is completely voluntary and you can stop at anytime. All data will be anonymously shared for educational and research purposes unless otherwise specified. Please visit our About Us page for more information. </label>
-          <!--add check boxes 
-          [ ] Yes I would like to participate and share my information with others.
-          [ ] Please do not share my infomation. I would still like to participate.-->
-        </div>
-
-        <div>
-          <button class="btn btn-inverse btn-lg btn-login" type="submit">
-            Sign up
-          </button>
-          or 
-          <a class="btn btn-default btn-lg btn-register" href="/login">
+        <p> You are invited to participate in the Think Dream Tank. This project examines how people form and develop their dreams and goals for the future. This project is completely voluntary and you can stop at anytime. All data will be anonymously shared for educational and research purposes unless otherwise specified. Please visit our <a href="https://thinkdreamtankblog.wordpress.com/" target="_blank" id="aboutuslink">About Us</a> page for more information.</p>
+        <div class ="form-group" ng-init="user={};user.share=true">
+          <input type="checkbox"
+                ng-model="user.share"
+                 /><label>Yes, I would like to participate and share with others.</label>
+              <div ng-hide = "user.share">
+                   <input type="checkbox"/>
+                   <label>No, I do not want to share with others.</label>
+              </div>
+        <button class="btn btn-default btn-lg btn-login"
+         type="submit">Sign Up</button>
+          or <a class="btn btn-default btn-lg btn-register" href="/login">
             Login
           </a>
         </div>
-
-        <hr>
-        <div>
-          <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')">
-            <i class="fa fa-facebook"></i> Connect with Facebook
-          </a>
-        </div>
+      </form>
       </form>
     </div>
   </div>
-  <hr>
+  </div>
 </div>
 </div>
+<hr>

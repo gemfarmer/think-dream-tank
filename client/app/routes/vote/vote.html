@@ -5,21 +5,20 @@
 	<section class="container">
 		<h3>What shared goals do you think we should work on?</h3>
 		<div class="goals-paired">
-			<div ng-if="!voted" ng-repeat="randomDream in randomDreams">
-
-				<div class="col-xs-6">
-					<!-- <p>What are your dreams for the future?<p> -->
-					<!-- <blockquote>{{randomDream.future}}</blockquote> -->
-					
-					<blockquote>{{randomDream.world}}</blockquote>
-					<button class="btn btn-primary" ng-click="voteThisDream(randomDream)">Vote for this goal</button>
-					<button class="btn btn-default" ng-click="flagDream(randomDream)">Flag for abuse</button>
-				</div>
-					
-				
-			</div>	
+			<p>{{goal}}</p>
+			<rzslider rz-slider-model="slider.value" rz-slider-options = "sliderOptions"></rzslider>
 		</div>
-		<button class="btn btn-primary col-xs-4 col-xs-offset-4" ng-click="newGoals()">Get new set of goals</button>
-		<div ng-if="voted">You voted!</div>
+		<div class = "row">
+			<button class="btn btn-primary col-md-4" ng-click="newGoals()">Get a new goal</button>
+			<button class="btn btn-primary col-md-4" ng-click="submitGoal()">Submit Vote</button>
+			<button class="btn btn-danger col-md-2" ng-click="flagDream(dream)"> Flag Goal </button>
+			<div ng-if="voted">You voted!</div>
+		</div>
+		<div class = "row">
+			<p> Welcome {{userInfo.name}}! Here are your goals: </p>
+				<ul ng-repeat="dream in userDreams">
+					<li>{{ dream.world}}</li>
+				</ul>
+		</div>
 	</section>
 </div>

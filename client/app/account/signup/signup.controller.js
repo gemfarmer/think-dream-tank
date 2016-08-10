@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('SignupCtrl', function ($scope, Auth, $location, $window) {
+  .controller('SignupCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};
 
@@ -9,7 +9,6 @@ angular.module('realizeChangeApp')
       $scope.submitted = true;
 
       if(form.$valid) {
-
         var createUser = function(location) {
           Auth.createUser({
             name: $scope.user.name,
@@ -19,7 +18,8 @@ angular.module('realizeChangeApp')
               latitude: location ? +location.coords.latitude : null,
               longitude: location ? +location.coords.longitude : null,
               zip: +$scope.user.zip
-            }
+            },
+            share: $scope.user.share
           })
           .then( function() {
             // Account created, redirect to home
@@ -47,9 +47,4 @@ angular.module('realizeChangeApp')
       }
     };
 
-    $scope.loginOauth = function(provider) {
-      $window.location.href = '/auth/' + provider;
-
-      console.log(Auth.getCurrentUser())
-    };
   });

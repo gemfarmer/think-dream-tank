@@ -2,14 +2,21 @@
 
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
+    var User = require('./../user/user.model');
+
+var UserSchema = require('mongoose').model('User').schema;
 
 var DreamSchema = new Schema({
-  future: String,
-  world: String,
+  future: String,//dreams
+  world: String,//goals
   active: Boolean,
   votes: Number,
   flagged: Boolean,
   user_id: String,
+  share: Boolean,
+  rating: [Number],
+  test: String,
+  average_rating: Number,
   location: {
     zip: { type: Number },
     latitude: { type: Number },
