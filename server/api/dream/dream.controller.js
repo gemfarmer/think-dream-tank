@@ -24,20 +24,13 @@ exports.show = function(req, res) {
 
 exports.random = function(req,res) {
   Dream.random(function(err, dream) {
-    console.log(dream)
     return res.json(200, dream);
-    // res.send(quote.quote);
-    // req.user.lastQuote = quote._id;
-    // req.user.save();
   });
 }
+
 exports.randomTwo = function(req,res){
   Dream.randomTwo(function(err, dreams) {
-    console.log(dreams)
     return res.json(200, dreams);
-    // res.send(quote.quote);
-    // req.user.lastQuote = quote._id;
-    // req.user.save();
   });
 }
 
@@ -59,10 +52,16 @@ exports.create = function(req, res) {
 // Updates an existing dream in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
+
   Dream.findById(req.params.id, function (err, dream) {
+
     if (err) { return handleError(res, err); }
     if(!dream) { return res.send(404); }
     var updated = _.merge(dream, req.body);
+    if (req.body.rating !== dream.rating) {
+      updated.markModified('rating');
+    }
+    updated.average_rating = _.mean(updated.rating);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.json(200, dream);
