@@ -8,7 +8,8 @@ angular.module('realizeChangeApp', [
   'ui.router',
   'ui.bootstrap',
   'angular-google-analytics',
-  'leaflet-directive'
+  'leaflet-directive',
+  'rzModule'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, AnalyticsProvider) {
 

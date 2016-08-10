@@ -11,9 +11,9 @@ angular.module('realizeChangeApp')
       if($scope.dreaming === {}) {
         return;
       }
-      var newDream = { 
-      	future: $scope.dreaming.future, 
-      	world : $scope.dreaming.world,  
+      var newDream = {
+      	future: $scope.dreaming.future,
+      	world : $scope.dreaming.world,
       	votes: 0
       };
       // $http.post('/api/dreams', newDream);

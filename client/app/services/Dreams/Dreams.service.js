@@ -1,9 +1,13 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .service('Dreams', function ($http, socket) {
+  .service('Dreams', function ($http, socket, Auth, User, UserInfo) {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    var Dreams = function(){};
+
+    var currentUser = Auth.getCurrentUser();
+
+    var Dreams = function(){
+    };
 
     Dreams.prototype.add = function(newDream){
     	$http.post('/api/dreams', newDream).then(function(data) {
@@ -20,4 +24,3 @@ angular.module('realizeChangeApp')
 
     return new Dreams();
   });
-

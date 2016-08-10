@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('MainCtrl', [ '$scope', '$http', 'socket', '$window', 'Auth', 'Dreams', 'User', '$modal', function ($scope, $http, socket, $window, Auth, Dreams, User, $modal) {
+  .controller('MainCtrl', [ '$scope', '$http', 'socket', '$window', 'Auth', 'User', '$modal', function ($scope, $http, socket, $window, Auth, User, $modal) {
     // $scope.awesomeThings = [];
     $scope.dreaming = {};
     $scope.currentUser = Auth.getCurrentUser();
     $scope.isLoggedIn = Auth.isLoggedIn();
-  
+
     // Example of using sockets
     // $http.get('/api/things').success(function(awesomeThings) {
     //   $scope.awesomeThings = awesomeThings;

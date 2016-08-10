@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('DreamsCtrl', [ '$scope', '$http', 'socket', 'Dreams', 'User', '$window', 'utility', function ($scope, $http, socket, Dreams, User, $window, utility) {
+  .controller('DreamsCtrl', function ($scope, $http, socket, Dreams, User, $window, utility) {
     var currentUser = User.get();
 
     $scope.searchParam = 'world';
@@ -129,5 +129,5 @@ angular.module('realizeChangeApp')
     });
 
 
-  }]);
+  });
 /* jshint ignore:end */
