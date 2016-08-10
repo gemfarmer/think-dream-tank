@@ -12,7 +12,6 @@ angular.module('realizeChangeApp')
       $scope.submitted = true;
       $scope.UserInfo = !UserInfo;
       currentUser.share = shareStatus;
-
       $scope.message = "share status changed successfully.";
       User.update(currentUser);
     }
