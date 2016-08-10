@@ -32,7 +32,7 @@ angular.module('realizeChangeApp')
 
       $scope.userDreams = _.filter($scope.dreams, function(dream) {
         return dream.user_id === currentUser._id;
-      })]
+      })
 
 
       socket.syncUpdates('dream', $scope.dreams);
@@ -56,7 +56,7 @@ angular.module('realizeChangeApp')
     $scope.newGoals = function() {
       $scope.loadRandomGoal();
     };
-    
+
     $scope.submitGoal = function() {
       $scope.dream.rating.push(+$scope.slider.value);
       $scope.dream.test='test';
