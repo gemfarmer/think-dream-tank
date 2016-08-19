@@ -1,7 +1,7 @@
 #side-nav {
 	width: 300px;
 	height:100%;
-	background: $navy;
+	background: #7d5d80;
 	left: -260px;
 	top: 0px;
 	z-index: 9000;
@@ -11,7 +11,7 @@
 	-webkit-transition: right, 0.3s;
     -moz-transition: right, 0.3s;
     transition: right, 0.3s;
-	
+
 	&.open {
 		left: 0px;
 	}

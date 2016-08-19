@@ -19,7 +19,7 @@
       <thead>
       	<!--<th>Dreams for the Future</th>-->
     	<th>Shared Goals for a Better World</th>
-    	<th class="clickable" ng-click="sortByVotes(parameter)">Votes</th>
+    	<th class="clickable" ng-click="sortByVotes(parameter)">Average Rating</th>
       </thead>
       <tbody>
       	<tr ng-repeat="dream in dreams | orderBy: parameter | limitTo : votesShown">
@@ -30,4 +30,5 @@
       </tbody>
     </table>
   </section>
+ <footer></footer>
 </div>
